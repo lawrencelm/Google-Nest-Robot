@@ -269,6 +269,51 @@
       // Let's define our first command. First the text we expect, and then the function it should call
       var commands = {
             //Hello. Welcome to Lawrence's website. I am Larry Bot, Lawrence's smart personal assistant. I am still under construction, so I am afraid I won't be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.
+            '*anything' : function() {
+              console.log("tempreature");
+              //increaseOne();
+                adjustTemperature(10,'F','');
+            },
+
+         /*   'Increase temperature': function(number) {
+                increaseOne();
+            },
+
+            'Decrease temperature': function(number) {
+                decreaseOne();
+            },
+
+            'Increase temperature by *number': function(number) {
+                adjustTemperature(parseInt(number),'F','');
+            },
+
+            'Decrease temperature by *number': function(number) {
+                adjustTemperature((-1)*(parseInt(number)),'F','');
+            },
+
+            'Increased temperature by *number': function(number) {
+                adjustTemperature(parseInt(number),'F','');
+            },
+
+            'Decreased temperature by *number': function(number) {
+                adjustTemperature((-1)*(parseInt(number)),'F','');
+            },
+
+            'Increase *anything': function(number) {
+                increaseOne();
+            },
+
+            'Decrease *anything': function(number) {
+                decreaseOne();
+            },
+
+            'Increased *anything': function(number) {
+                increaseOne();
+            },
+
+            'Decreased *anything': function(number) {
+                decreaseOne();
+            }, */
 
             '(Larry) (Bot) (set up a) meeting (with Lawrence) (on) *date (at) *time':function(date, time) {
               setUpMeeting1(date, time);
@@ -428,11 +473,11 @@
            //implement question-answering NLP here
             //also use Parse for backend so I can store all the data and learn on that data
             //temporary solution for "listening to himself" bug
-          },
+          }/*,
 
         '*anything': function(command) {
               anyCommand(command);
-         }
+         }*/
 
       };
 
