@@ -104,9 +104,10 @@
     function setUpMeeting3(dateTime) {
               //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
               annyang.pause();
-              emotions(speechLog);
 
               var speechLog = "Awesome! I am scheduling a meeting for " + dateTime + ". Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!";
+              emotions(speechLog);
+
               responsiveVoice.speak(speechLog, 'UK English Male');
               window.open("mailto:lawrence@lawrencemurata.com?subject=Let's meet!&body=Hello Lawrence! Can we meet on " + dateTime + "?");
 
@@ -120,9 +121,10 @@
     function findAvailability() {
               //Awesome! I am scheduling a meeting for Monday 7 pm. Please send him the email I set up for you in order to confirm the meeting. Excited to meet you soon!
               annyang.pause();
-              emotions(speechLog);
 
               var speechLog = "I'm checking his schedule. Hold on... On Mondays, Wednesdays and Fridays, he is usually free from 10 am to 11 am, from noon to 12 45 or anytime after 2 15 pm. On Tuesdays and Thursdays, he is free from 11 40 am to 1 pm or anytime after 2 10 pm. He is usually free during weekends as well. Let me know if you want to set up a meeting and the date and time of the meeting. You can, for example, say 'Larry Bot, set up a meeting with Lawrence on Monday at 6 pm'";
+              emotions(speechLog);
+
               responsiveVoice.speak(speechLog, 'UK English Male');
 
               console.log(speechLog);
@@ -134,9 +136,10 @@
 
     function navigateWebsite(section, sentence) {
               annyang.pause();
-              emotions(speechLog);
 
               var speechLog = sentence;
+              emotions(speechLog);
+
               responsiveVoice.speak(speechLog, 'UK English Male');
               window.location.href = 'http://lawrencemurata.com/#' + section;
 
@@ -150,9 +153,9 @@
 
     function socialMedia(keywordString, followingAdding) {
               annyang.pause();
-              emotions(speechLog);
 
               var speechLog = followingAdding + " Lawrence on " + keywordString;
+              emotions(speechLog);
 
               responsiveVoice.speak(speechLog,'UK English Male');
               var user = '';
@@ -206,9 +209,10 @@
 
     function simpleOpen(query, open) {
               annyang.pause();
-              emotions(speechLog);
 
               var speechLog = query;
+              emotions(speechLog);
+
 
               responsiveVoice.speak(speechLog,'UK English Male');
               window.open(open);
@@ -223,9 +227,9 @@
 
     function joke(query) {
               annyang.pause();
-              emotions(speechLog);
 
               var speechLog = "Whats the object-oriented way to become wealthy? Inheritance";
+              emotions(speechLog);
 
               var randomnumber = Math.floor(Math.random()*11); //random number from 0 to 10
               //going to use this to implement multiple jokes. all CS jokes
@@ -241,9 +245,9 @@
 
     function hi() {
               annyang.pause();
-              emotions(speechLog);
 
               var speechLog = 'Hello. Welcome to Lawrence\'s website. I am Larry Bot, Lawrence\'s smart personal assistant. I am still under construction, so I am afraid I won\'t be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.';
+              emotions(speechLog);
 
               responsiveVoice.speak(speechLog, 'UK English Male');
 
@@ -252,6 +256,23 @@
               var timing = getTiming(speechLog);
 
               window.setTimeout("afterSpeech()", timing); //time it according to size of string
+    }
+
+    function temperature() {
+             annyang.pause();
+
+              var speechLog = 'Yes, master. I am changing the temperature for you. Hold on... How do you like it now?';
+
+              //responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);
+     
     }
 
     if (annyang) {
@@ -273,6 +294,7 @@
               console.log("tempreature");
               //increaseOne();
                 adjustTemperature(10,'F','');
+                temperature();
             },
 
          /*   'Increase temperature': function(number) {

@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+	<head>
+        
+        <!-- Meta tag -->
+        <meta name="description" content="Personal website">
+		<meta name="keywords" content="Lawrence Lin Murata, Lawrence, Murata, Lin, Lawrence Murata, blog, Stanford, University, college, education, entrepreneur, technology, idea">
+		<meta name="author" content="Lawrence Lin Murata">
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta property="og:image" content="images/law.jpg"/>
+		<meta property="og:image" content="images/law2.jpg"/>
+        
+        <!-- Konami Code Easter Egg -->
+        <script src="js/konami.js" type="text/javascript"></script>
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+		<title>Smart Google Nest Robot</title>
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.poptrox.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+
+        <!-- Parse for backend/Larry Bot's memory -->
+        <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
+		<script src="annyang/annyang.js"></script>
+
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/annyang.min.js"></script>-->
+
+
+	<script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+
+	    <!--<script src="app.js"></script>-->
+       <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.0.min.js"></script>
+        <script src="annyang/annyang.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/freebase/suggest/4_2/suggest.min.css">
+        <script type="text/javascript" src="https://www.gstatic.com/freebase/suggest/4_2/suggest.min.js"></script>-->
+</head>
+
+<body>
+        <!--<script>
+      $('#isPlaying').on('click', function() {
+        $('#r').text(window.speechSynthesis.speaking)
+      })
+        </script>
+            <button id="isPlaying">Playing:</button>
+            <p id="r">?</p>-->
+        <script src="js/ebayAPIHandler.js"></script>
+        <script src="js/flickrAPIHandler.js"></script>
+        <script src="js/spotifyAPIHandler.js"></script>
+
+        <script type="text/javascript" src="js/voicehandler.js"></script>
+
+        <!-- KONAMI EATER EGG YAY -->
+        <script type="text/javascript">
+            var easter_egg = new Konami(function() { window.open("https://www.google.com/search?q=atari+breakout&espv=210&es_sm=91&source=lnms&tbm=isch&sa=X&ei=SvUsU4WKK47ooASm7oHACw&sqi=2&ved=0CAcQ_AUoAQ&biw=1161&bih=537#imgdii=_")});
+        </script>
+
+	<!--		    <textarea id="text" cols="45" rows="3">Hello world this is some text to say</textarea>
+
+    <select id="voiceselection"></select>
+
+    <input onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" type="button" value="Play" />
+    <br>
+    <button id="isPlaying">Playing:</button>
+    <p id="r">?</p>
+    <script src="speakingvoice.js"></script>-->
+
+        <section id="cta" class="main style1">
+        <div class="animated-bg">
+            <div class="content">
+                <div id="large">
+                    <canvas id="draw"></canvas>
+                    <div class="container">
+              <!--      	                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                    	<h3>Hi</h3>
+                    </div>
+                </div>-->
+              		<header>
+                        <div class="deck-diamond deck-item hover" data-class-away="deckItemView:isAway <
+          .auto_away
+          .auto_away_enable" data-data-target-temp-type="
+        deckItemView:getTargetTemperatureType <
+          .online
+          .target_temperature_type" data-data-emergency-heat-enabled="
+        deckItemView:isEmergencyHeatEnabled <
+          .emer_heat_enable" data-data-offline-state="
+        deckItemView:isOffline < .online .target_temperature_type" data-data-state="
+        deckItemView:getHVACState <
+          .hvac_ac_state
+          .hvac_alt_heat_state
+          .hvac_alt_heat_x2_state
+          .hvac_aux_heater_state
+          .hvac_cool_x2_state.
+          .hvac_emer_heat_state
+          .hvac_heat_x2_state
+          .hvac_heat_x3_state
+          .hvac_heater_state
+          .online
+          .target_temperature_type
+          .fan_cooling_state" data-target-temp-type="heat" data-state="heat" style="transform: translate(0px, 0px) scale(1, 1); opacity: 1;">
+
+    <div class="bg cool"></div>
+    <div class="bg heat"></div>
+    <div class="bg off"></div>
+    <div class="bg offline"></div>
+    <div class="bg hover"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 336 336" preserveAspectRatio="xMidYMid slice" style="width:100%; height:100%; position:absolute; top:0; left:0;">
+
+    <!--! AUTO text for auto-away. -->
+    <text class="auto" text-anchor="middle" x="168" font-size="37" font-weight="bold" data-y="deckItemView:getAutoTextY <
+          .auto_away
+          .auto_away_enable" data-hide="deckItemView:isAutoTextHidden <
+          .auto_away
+          .auto_away_enable
+          .target_temperature_type" y="137" style="display: none;">AUTO</text>
+
+    <!--! AWAY text for English. -->
+    <text text-anchor="middle" x="168" y="187" font-size="54" font-weight="bold" class="target-temperature-away" data-hide="
+        deckItemView:isAwayTextHidden <
+          .auto_away
+          .auto_away_enable
+          .target_temperature_type" style="display: none;">AWAY</text>
+
+    <!--! AWAY icon for non-English languages. -->
+    <image class="icon away" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/magma/thermozilla/icon/thermozilla_icon_away-e9368cb8.svg" x="122" height="84" width="92" data-y="deckItemView:getAwayIconY <
+        .auto_away
+        .auto_away_enable" data-hide="deckItemView:isAwayIconHidden <
+        .auto_away
+        .auto_away_enable
+        .target_temperature_type" y="114" style="display: none;"></image>
+
+    <!--! The OFF icon for non-English languages. -->
+    <image class="icon off" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/magma/thermozilla/icon/thermozilla_icon_off-df928667.svg" x="122" y="114" height="84" width="92" data-hide="deckItemView:isOffIconHidden <
+        .target_temperature_type" style="display: none;"></image>
+
+    <!--! The upper block of status text ("halo"). -->
+    <text class="halo-text" text-anchor="middle" x="168" data-hide="deckItemView:shouldHideHaloText < .target_temperature_type" data-y="
+        deckItemView:getHaloTextY <
+          .emer_heat_enable
+          .target_temperature_type" data-svg="
+        deckItemView:getHaloText <
+          .auto_dehum_state
+          .compressor_lockout_enabled
+          .dehumidifier_state
+          .demand_response
+          .emer_heat_enable
+          .fan_cooling_state
+          .heatpump_setback_active
+          .humidifier_state
+          .hvac_ac_state
+          .hvac_alt_heat_state
+          .hvac_alt_heat_x2_state
+          .hvac_aux_heater_state
+          .hvac_cool_x2_state
+          .hvac_emer_heat_state
+          .hvac_heat_x2_state
+          .hvac_heat_x3_state
+          .hvac_heater_state
+          .preconditioning_active
+          .target_temperature_type
+          .time_to_target
+          .time_to_target_training" y="118" style="opacity: 1;">HEATING</text>
+
+    <!--! Display text for target_temperature or target_temperature_low, depending upon range mode status. -->
+    <text y="202" font-weight="bold" class="target-temperature" data-hide="deckItemView:isTargetTempHidden <
+          .auto_away
+          .auto_away_enable
+          .emer_heat_enable
+          .target_temperature_type" data-font-size="
+        deckItemView:getTargetTemperatureFontSize <
+          .emer_heat_enable
+          .target_temperature
+          .target_temperature_low
+          .target_temperature_type
+          .temperature_scale" data-text="
+        deckItemView:getTargetTemperature <
+          .emer_heat_enable
+          .target_temperature
+          .target_temperature_low
+          .target_temperature_type
+          .temperature_scale" data-text-anchor="
+        deckItemView:getTargetTemperatureTextAnchor <
+          .emer_heat_enable
+          .target_temperature_type
+          .temperature_scale" data-x="
+        deckItemView:getTargetTemperatureX <
+          .emer_heat_enable
+          .target_temperature
+          .target_temperature_type
+          .temperature_scale" data-y="
+        deckItemView:getTargetTemperatureY <
+          .emer_heat_enable
+          .target_temperature_type
+          .temperature_scale" font-size="96" text-anchor="middle" x="168">76</text>
+
+    <!--! The dot glyph which appears in range mode. -->
+    <text text-anchor="middle" x="168" y="182" font-size="44" class="target-temperature-dot" data-hide="deckItemView:isTargetTempDotHidden <
+          .auto_away
+          .auto_away_enable
+          .emer_heat_enable
+          .target_temperature_type" style="display: none;">•</text>
+
+    <!--! Display text for the target_temperature_high or nothing at all, depending upon range mode status. -->
+    <text y="202" font-weight="bold" text-anchor="left" class="target-temperature-high" data-hide="deckItemView:isTargetTempHighHidden <
+          .auto_away
+          .auto_away_enable
+          .emer_heat_enable
+          .target_temperature_type" data-font-size="
+        deckItemView:getTargetTemperatureFontSize <
+          .emer_heat_enable
+          .target_temperature_high
+          .target_temperature_type
+          .temperature_scale" data-text="
+        deckItemView:getTargetTemperatureHigh <
+          .emer_heat_enable
+          .target_temperature_high
+          .target_temperature_type
+          .temperature_scale" data-x="
+        deckItemView:getTargetTemperatureXHigh <
+          .emer_heat_enable
+          .target_temperature_high
+          .target_temperature_type
+          .temperature_scale" data-y="
+        deckItemView:getTargetTemperatureY <
+          .emer_heat_enable
+          .target_temperature_type
+          .temperature_scale" font-size="96" x="187" style="display: none;">75</text>
+
+    <!--! The lower block of status text. -->
+    <text class="halo-text" text-anchor="middle" x="168" y="232" data-hide="
+        deckItemView:shouldHideFooterText <
+          .target_temperature_type" data-text="
+        deckItemView:getFooterText <
+          .target_temperature_type
+          .demand_response
+          .auto_dehum_state" style="opacity: 1;"></text>
+
+    <g id="ticks" style="opacity: 1;">
+      <path class="control raise" d="M60,168 l228,0 A108,108 0 0,1 50,168 z" transform="rotate(180 169 168)"></path>
+      <image class="arrow raise" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/magma/thermozilla/icon/thermozilla_icon_temperature_up-7ef183d0.svg#svgView(viewBox(0,0,36,22))" x="150" y="67" height="22px" width="36px" preserveAspectRatio="none"></image>
+
+      <path class="control lower" d="M67,168 l228,0 A108,108 0 0,1 50,168 z"></path>
+      <image class="arrow lower" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/magma/thermozilla/icon/thermozilla_icon_temperature_down-d7338738.svg#svgView(viewBox(0,0,36,22))" x="150" y="248" height="22" width="36" preserveAspectRatio="none"></image>
+
+      <path class="control range second raise" d="M0,0 L0,-118  A118,118 0 0,1  118,000  z" transform="translate(168,168)"></path>
+      <image class="arrow range second raise" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/magma/thermozilla/icon/thermozilla_icon_temperature_up-7ef183d0.svg#svgView(viewBox(0,0,36,22))" x="196" y="78" height="22" width="36" preserveAspectRatio="none"></image>
+
+      <path class="control range raise" d="M0,0 L-118,0  A118,118 0 0,1    0,-118 z" transform="translate(168,168)"></path>
+      <image class="arrow range raise" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/magma/thermozilla/icon/thermozilla_icon_temperature_up-7ef183d0.svg#svgView(viewBox(0,0,36,22))" x="104" y="78" height="22" width="36" preserveAspectRatio="none"></image>
+
+      <path class="control range lower" d="M0,0 L0,118   A118,118 0 0,1 -118,0    z" transform="translate(168,168)"></path>
+      <image class="arrow range lower" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/magma/thermozilla/icon/thermozilla_icon_temperature_down-d7338738.svg#svgView(viewBox(0,0,36,22))" x="104" y="235" height="22" width="36" preserveAspectRatio="none"></image>
+
+      <path class="control range second lower" d="M0,0 L118,0   A118,118 0 0,1    0,118  z" transform="translate(168,168)"></path>
+      <image class="arrow range second lower" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/magma/thermozilla/icon/thermozilla_icon_temperature_down-d7338738.svg#svgView(viewBox(0,0,36,22))" x="196" y="235" height="22" width="36" preserveAspectRatio="none"></image>
+
+      
+      
+      
+      
+            <text id="current_temp_label_shadow" class="current-temperature-text" text-rendering="geometricPrecision" alignment-baseline="central" text-anchor="middle" x="121.31425043604622" y="296.26804273727646" stroke-width="6" font-size="21" render-order="1" data-hide="deckItemView:isOffline < .online" data-text="
+            deckItemView:getCurrentTemperatureNoDegree <
+              .auto_away
+              .away_temperature_high
+              .away_temperature_high_enabled
+              .away_temperature_low
+              .away_temperature_low_enabled
+              .current_temperature
+              .temperature_scale
+              .target_temperature_type" data-stroke="
+            deckItemView:getHVACStateStrokeColor <
+              .hvac_ac_state
+              .hvac_alt_heat_state
+              .hvac_alt_heat_x2_state
+              .hvac_aux_heater_state
+              .hvac_cool_x2_state.
+              .hvac_emer_heat_state
+              .hvac_heat_x2_state
+              .hvac_heat_x3_state
+              .hvac_heater_state
+              .target_temperature_type
+              .fan_cooling_state" stroke="rgba(227, 98, 5, 0.75)">46</text>
+        <text id="current_temp_label" class="current-temperature-text" text-rendering="geometricPrecision" alignment-baseline="central" text-anchor="middle" x="121.31425043604622" y="296.26804273727646" font-size="21" render-order="2" data-hide="deckItemView:isOffline < .online" data-text="
+            deckItemView:getCurrentTemperatureNoDegree <
+              .auto_away
+              .away_temperature_high
+              .away_temperature_high_enabled
+              .away_temperature_low
+              .away_temperature_low_enabled
+              .current_temperature
+              .temperature_scale
+              .target_temperature_type">46</text>
+
+      
+      
+      
+      
+            <text id="away_temp_high_label_shadow" class="away-temperature-text temp-high" text-rendering="geometricPrecision" alignment-baseline="central" text-anchor="middle" x="108" y="108" stroke-width="6" font-size="21" render-order="1" data-hide="deckItemView:isOffline < .online" data-text="
+            deckItemView:getAwayTempHighNoDegree <
+              .auto_away
+              .away_temperature_high
+              .away_temperature_high_enabled
+              .away_temperature_low
+              .away_temperature_low_enabled
+              .current_temperature
+              .temperature_scale
+              .target_temperature_type" data-stroke="
+            deckItemView:getHVACStateStrokeColor <
+              .hvac_ac_state
+              .hvac_alt_heat_state
+              .hvac_alt_heat_x2_state
+              .hvac_aux_heater_state
+              .hvac_cool_x2_state.
+              .hvac_emer_heat_state
+              .hvac_heat_x2_state
+              .hvac_heat_x3_state
+              .hvac_heater_state
+              .target_temperature_type
+              .fan_cooling_state" stroke="rgba(227, 98, 5, 0.75)"></text>
+        <text id="away_temp_high_label" class="away-temperature-text temp-high" text-rendering="geometricPrecision" alignment-baseline="central" text-anchor="middle" x="108" y="108" font-size="21" render-order="2" data-hide="deckItemView:isOffline < .online" data-text="
+            deckItemView:getAwayTempHighNoDegree <
+              .auto_away
+              .away_temperature_high
+              .away_temperature_high_enabled
+              .away_temperature_low
+              .away_temperature_low_enabled
+              .current_temperature
+              .temperature_scale
+              .target_temperature_type"></text>
+
+      
+      
+      
+      
+            <text id="away_temp_low_label_shadow" class="away-temperature-text temp-low" text-rendering="geometricPrecision" alignment-baseline="central" text-anchor="middle" x="108" y="108" stroke-width="6" font-size="21" render-order="1" data-hide="deckItemView:isOffline < .online" data-text="
+            deckItemView:getAwayTempLowNoDegree <
+              .auto_away
+              .away_temperature_high
+              .away_temperature_high_enabled
+              .away_temperature_low
+              .away_temperature_low_enabled
+              .current_temperature
+              .temperature_scale
+              .target_temperature_type" data-stroke="
+            deckItemView:getHVACStateStrokeColor <
+              .hvac_ac_state
+              .hvac_alt_heat_state
+              .hvac_alt_heat_x2_state
+              .hvac_aux_heater_state
+              .hvac_cool_x2_state.
+              .hvac_emer_heat_state
+              .hvac_heat_x2_state
+              .hvac_heat_x3_state
+              .hvac_heater_state
+              .target_temperature_type
+              .fan_cooling_state" stroke="rgba(227, 98, 5, 0.75)"></text>
+        <text id="away_temp_low_label" class="away-temperature-text temp-low" text-rendering="geometricPrecision" alignment-baseline="central" text-anchor="middle" x="108" y="108" font-size="21" render-order="2" data-hide="deckItemView:isOffline < .online" data-text="
+            deckItemView:getAwayTempLowNoDegree <
+              .auto_away
+              .away_temperature_high
+              .away_temperature_high_enabled
+              .away_temperature_low
+              .away_temperature_low_enabled
+              .current_temperature
+              .temperature_scale
+              .target_temperature_type"></text>
+
+    <svg id="SvgjsSvg1000" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" xlink="http://www.w3.org/1999/xlink" style="position:relative;overflow:hidden;left:-0.5px;top:-0.59375px;"><path id="SvgjsPath1002" d="M101.35360902356895,268.6917130146105L83.96759398623911,294.95911640972633L86.19613462919601,296.4063476250118L103.12107229212097,269.8395170819059z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1003" d="M97.88011809790405,266.3044488415255L79.58797499300945,291.9490876697496L81.7646504281942,293.47321221770187L99.60644689132644,267.5132372761084z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1004" d="M94.49205744719696,263.79741584016665L75.31607243342225,288.7880460593405L77.43823071710823,290.38720702897126L96.17514849977549,265.06571591952894z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1005" d="M91.19355490146002,261.1736684440672L71.15709096271046,285.4798428207804L73.22214657192241,287.15209188078L92.83135762600743,262.49993493992895z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1006" d="M87.98862917794969,258.43640328527204L67.11609765915397,282.0285084901256L69.12153464172957,283.77180826260474L89.57914816413034,259.81902034620373z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1007" d="M84.8811849849792,255.58895529973373L63.19801585062595,278.4382479866208L65.14139089051571,280.2504745293414L86.42248243040902,257.02623841982245z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1008" d="M81.87500826463257,252.634793664207L59.40761911627584,274.7134354896523L61.286564510347674,276.5923808837241L83.36520633579298,254.12499173536742z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1009" d="M78.97376158017752,249.57751756959095L55.74952547065861,270.85860910948423L57.56175201337922,272.80198414937405L80.41104470026629,251.1188150150208z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1010" d="M76.18097965379626,246.42085183586966L52.22819173739528,266.87846535827043L53.97149150987444,268.883902340846L77.56359671472799,248.0113708220503z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1011" d="M73.50006506007101,243.16864237399255L48.847908119219966,262.77785342807755L50.52015717921962,264.8429090372896L74.82633155593281,244.80644509854z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1012" d="M70.93428408047099,239.82485150022444L45.61279297102864,258.56176928289165L47.21195394065944,260.6839275665777L72.20258415983335,241.507942552803z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1013" d="M68.48676272389162,236.3935531086736L42.52678778229813,254.2353495718058L44.0509123302504,256.4120250069906L69.69555115847446,238.11988190209598z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1014" d="M66.16048291809406,232.87892770787897L39.59365237498815,249.80386537080392L41.04088359027364,252.03240601376086L67.30828698538944,234.646390976431z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1015" d="M63.95827887668577,229.28525732750504L36.8169603227777,245.2727157607672L38.185534977089446,247.5504064780032L65.04370015424335,231.09170168945082z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1016" d="M61.88283364606768,225.6169203013477L34.20009459721578,240.6474212495254L35.488345293150246,242.97148702575282L62.904549715257104,227.46014488249364z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1017" d="M59.936675836555466,221.8783859330094L31.746243446091682,235.9336170459684L32.952600648615714,238.30122636503387L60.893441893729715,223.75614504813032z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1018" d="M58.12217654165741,218.07420905074085L29.45839650904631,231.1370461944124L30.581390457733733,233.54531448906295L59.01282691475434,219.98421493960166z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1019" d="M56.44154644926212,214.20902445808457L27.33934117515659,226.2635525775849L28.377603674864872,228.70954574386874L57.26499601799627,216.1489500727235z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1020" d="M54.89683314825598,210.28754128708067L25.391659186931463,221.31907379675388L26.343925274736762,223.79981176877428L55.65207866617055,212.25502312695892z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1021" d="M53.48991863385142,206.31453726091485L23.617723494856136,216.30963393767524L24.482832981215836,218.8220943183416L54.176039950619455,208.30717825247785z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1022" d="M52.222517014665684,202.29485287299866L22.01969536631762,211.24133623117223L22.796594248582437,213.78245797452558L52.838678197151594,204.31022529014098z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1023" d="M51.09617242434349,198.2333854895738L20.599521752433105,206.12035561728874L21.28726349898713,208.68704275791458L51.641622775058764,200.2690339114495z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1024" d="M50.11225714026804,194.13508338302591L19.358932915990152,200.9529312220762L19.956679619453723,203.54205664706157L50.58633211198054,196.18852768560055z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1025" d="M49.27196991165248,190.0049397031768L18.2994403233879,195.74535875617946L18.80646372147868,198.35376801501823L49.674091917034815,192.07367808087653z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1026" d="M48.57633449904854,185.84798639390047L17.422334803148175,190.5039828444832L17.8380171659565,193.12849799228815L48.906013614379304,187.9294984076768z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1027" d="M48.026198427052066,181.66928806247472L16.728684973239552,185.23518929616378L17.052519855837346,187.87261276550282L48.283032989112385,183.7610377105712z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1028" d="M47.6222319517248,177.47393580913726L16.21933593913127,179.94539732456437L16.450928798597033,182.59251582120413L47.80590904716317,179.57337461681706z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1029" d="M47.364927243990664,173.2670410243643L15.894908264162154,174.64105172637238L16.033976940270747,177.29464014418198L47.47522309055957,175.37161114883398z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1030" d="M47.25459779000131,169.05372916142863L15.755797213479923,169.3286150296274L15.80217227247141,171.9854403798737L47.291378009201466,171.16086650817567z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1031" d="M47.291378009201466,164.83913349182427L15.80217227247141,164.01455962012628L15.755797213479923,166.67138497037257L47.25459779000131,166.94627083857134z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1032" d="M47.47522309055955,160.62838885116605L16.033976940270747,158.70535985581807L15.894908264162154,161.3589482736276L47.364927243990664,162.73295897563568z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1033" d="M47.805909047163155,156.42662538318297L16.450928798597033,153.4074841787959L16.21933593913127,156.05460267543558L47.6222319517248,158.5260641908627z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1034" d="M48.2830329891124,152.23896228942877L17.052519855837375,148.12738723449715L16.728684973239552,150.7648107038362L48.026198427052066,154.33071193752525z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1035" d="M48.906013614379304,148.07050159232318L17.8380171659565,142.87150200771183L17.422334803148175,145.49601715551677L48.57633449904854,150.1520136060995z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1036" d="M49.67409191703483,143.92632191912344L18.806463721478707,137.6462319849817L18.299440323387927,140.25464124382052L49.27196991165249,145.99506029682317z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1037" d="M50.58633211198055,139.8114723143994L19.95667961945375,132.4579433529384L19.358932915990152,135.04706877792387L50.11225714026804,141.86491661697409z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1038" d="M51.64162277505878,135.73096608855047L21.28726349898716,127.31295724208536L20.599521752433105,129.87964438271132L51.09617242434349,137.76661451042622z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1039" d="M52.83867819715161,131.689774709859L22.796594248582466,122.21754202547439L22.01969536631762,124.75866376882779L52.222517014665684,133.70514712700134z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1040" d="M54.17603995061947,127.69282174752213L24.482832981215864,117.17790568165833L23.617723494856165,119.69036606232473L53.48991863385143,129.68546273908512z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1041" d="M55.65207866617054,123.74497687304111L26.343925274736762,112.20018823122575L25.391659186931463,114.68092620324606L54.89683314825599,125.7124587129193z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1042" d="M57.26499601799627,119.85104992727653L28.377603674864872,107.29045425613128L27.33934117515659,109.73644742241507L56.44154644926212,121.7909755419154z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1043" d="M59.01282691475433,116.01578506039837L30.581390457733733,102.45468551093707L29.45839650904631,104.86295380558758L58.122176541657424,117.92579094925912z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1044" d="M60.89344189372973,112.24385495186965L32.95260064861574,97.69877363496609L31.746243446091682,100.06638295403158L59.93667583655548,114.12161406699056z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1045" d="M62.904549715257104,108.53985511750633L35.488345293150275,93.02851297424712L34.20009459721578,95.35257875047459L61.882833646067695,110.38307969865227z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1046" d="M65.04370015424337,104.90829831054917L38.185534977089475,88.44959352199677L36.8169603227777,90.7272842392328L63.95827887668575,106.71474267249498z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1047" d="M67.30828698538946,101.35360902356896L41.04088359027365,83.96759398623912L39.59365237498815,86.19613462919608L66.16048291809405,103.12107229212103z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1048" d="M69.69555115847447,97.880118097904L44.05091233025041,79.5879749930094L42.526787782298115,81.7646504281942L68.4867627238916,99.60644689132644z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1049" d="M72.20258415983338,94.49205744719696L47.211953940659484,75.31607243342225L45.612792971028654,77.4382307171083L70.934284080471,96.17514849977555z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1050" d="M74.82633155593281,91.19355490146002L50.52015717921962,71.15709096271046L48.84790811921998,73.22214657192241L73.50006506007102,92.83135762600743z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1051" d="M77.56359671472798,87.9886291779497L53.9714915098744,67.11609765915398L52.228191737395306,69.12153464172953L76.18097965379629,89.57914816413032z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1052" d="M80.41104470026626,84.88118498497921L57.56175201337919,63.198015850625964L55.749525470658625,65.14139089051571L78.97376158017752,86.42248243040902z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1053" d="M83.365206335793,81.87500826463257L61.2865645103477,59.40761911627585L59.40761911627587,61.28656451034769L81.87500826463258,83.36520633579299z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1054" d="M86.42248243040902,78.97376158017752L65.14139089051572,55.74952547065861L63.19801585062598,57.56175201337919L84.88118498497923,80.41104470026626z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1055" d="M89.57914816413033,76.18097965379626L69.12153464172955,52.22819173739528L67.11609765915395,53.97149150987444L87.98862917794969,77.56359671472799z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1056" d="M92.83135762600746,73.50006506007101L73.22214657192245,48.847908119219966L71.15709096271043,50.52015717921965L91.19355490145999,74.82633155593282z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1057" d="M96.17514849977556,70.934284080471L77.43823071710831,45.612792971028654L75.31607243342228,47.21195394065944L94.49205744719698,72.20258415983335z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1058" d="M99.60644689132646,68.48676272389159L81.76465042819423,42.526787782298086L79.58797499300942,44.0509123302504L97.88011809790402,69.69555115847446z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1059" d="M103.121072292121,66.16048291809406L86.19613462919605,39.59365237498815L83.96759398623915,41.04088359027364L101.35360902356898,67.30828698538944z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1060" d="M106.71474267249496,63.95827887668577L90.72728423923277,36.8169603227777L88.44959352199679,38.185534977089446L104.90829831054918,65.04370015424335z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1061" d="M110.38307969865228,61.88283364606768L95.3525787504746,34.20009459721578L93.02851297424715,35.488345293150275L108.53985511750636,62.904549715257104z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1062" d="M114.12161406699059,59.93667583655548L100.06638295403161,31.746243446091682L97.6987736349661,32.952600648615714L112.24385495186968,60.893441893729715z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1063" d="M117.92579094925914,58.12217654165741L104.86295380558761,29.45839650904631L102.4546855109371,30.581390457733704L116.01578506039839,59.012826914754314z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1064" d="M121.79097554191542,56.44154644926212L109.7364474224151,27.33934117515659L107.29045425613128,28.377603674864872L119.85104992727653,57.26499601799627z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1065" d="M125.71245871291933,54.89683314825598L114.6809262032461,25.391659186931463L112.20018823122575,26.343925274736762L123.74497687304111,55.65207866617054z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1066" d="M129.68546273908512,53.48991863385143L119.69036606232471,23.617723494856165L117.17790568165836,24.482832981215864L127.69282174752215,54.17603995061947z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1067" d="M133.70514712700134,52.222517014665684L124.75866376882777,22.01969536631762L122.21754202547442,22.796594248582437L131.68977470985902,52.838678197151594z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1068" d="M137.7666145104262,51.09617242434349L129.8796443827113,20.599521752433105L127.31295724208539,21.28726349898716L135.73096608855047,51.64162277505878z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1069" d="M141.86491661697409,50.11225714026804L135.04706877792384,19.358932915990152L132.4579433529384,19.956679619453723L139.81147231439942,50.58633211198054z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1070" d="M145.9950602968232,49.27196991165248L140.25464124382054,18.2994403233879L137.64623198498174,18.806463721478707L143.92632191912344,49.67409191703483z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1071" d="M150.1520136060995,48.57633449904854L145.49601715551677,17.422334803148175L142.87150200771183,17.8380171659565L148.07050159232315,48.906013614379304z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1072" d="M154.33071193752528,48.026198427052066L150.7648107038362,16.728684973239552L148.12738723449715,17.052519855837375L152.23896228942877,48.2830329891124z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1073" d="M158.52606419086274,47.6222319517248L156.0546026754356,16.21933593913127L153.4074841787959,16.450928798597033L156.42662538318297,47.805909047163155z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1074" d="M162.73295897563568,47.364927243990664L161.35894827362762,15.894908264162154L158.70535985581805,16.033976940270747L160.62838885116605,47.47522309055955z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1075" d="M166.94627083857134,47.25459779000131L166.67138497037257,15.755797213479923L164.01455962012633,15.80217227247141L164.83913349182433,47.291378009201466z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1076" d="M171.16086650817567,47.291378009201466L171.9854403798737,15.80217227247141L169.32861502962743,15.755797213479923L169.05372916142863,47.25459779000131z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1077" d="M175.37161114883398,47.47522309055957L177.29464014418195,16.033976940270747L174.6410517263724,15.894908264162154L173.26704102436432,47.364927243990664z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1078" d="M179.57337461681706,47.805909047163155L182.5925158212041,16.450928798597033L179.9453973245644,16.21933593913127L177.4739358091373,47.6222319517248z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1079" d="M183.76103771057126,48.2830329891124L187.87261276550288,17.052519855837375L185.2351892961638,16.728684973239552L181.66928806247475,48.026198427052066z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1080" d="M187.92949840767682,48.906013614379304L193.12849799228817,17.8380171659565L190.5039828444832,17.422334803148175L185.84798639390047,48.57633449904854z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1081" d="M192.07367808087656,49.67409191703483L198.35376801501826,18.806463721478707L195.74535875617946,18.2994403233879L190.0049397031768,49.27196991165248z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1082" d="M196.18852768560058,50.58633211198055L203.5420566470616,19.95667961945375L200.95293122207616,19.358932915990152L194.13508338302591,50.11225714026804z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1083" d="M200.26903391144953,51.64162277505878L208.6870427579146,21.28726349898716L206.1203556172887,20.599521752433105L198.2333854895738,51.09617242434349z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1084" d="M204.31022529014098,52.838678197151594L213.78245797452558,22.796594248582437L211.24133623117223,22.01969536631762L202.29485287299866,52.222517014665684z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1085" d="M208.30717825247785,54.176039950619455L218.8220943183416,24.482832981215836L216.30963393767527,23.617723494856165L206.31453726091488,53.48991863385143z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1086" d="M212.2550231269589,55.65207866617054L223.79981176877425,26.343925274736762L221.3190737967539,25.391659186931463L210.2875412870807,54.89683314825599z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1087" d="M216.1489500727235,57.26499601799627L228.70954574386874,28.377603674864872L226.26355257758493,27.33934117515659L214.2090244580846,56.44154644926212z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1088" d="M219.98421493960166,59.01282691475434L233.54531448906295,30.581390457733733L231.1370461944124,29.45839650904631L218.07420905074088,58.12217654165741z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1089" d="M223.75614504813035,60.89344189372973L238.30122636503393,32.95260064861574L235.9336170459684,31.746243446091682L221.8783859330094,59.936675836555466z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1090" d="M227.46014488249364,62.904549715257104L242.97148702575288,35.488345293150275L240.6474212495254,34.20009459721578L225.6169203013477,61.88283364606768z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1091" d="M231.09170168945082,65.04370015424337L247.55040647800323,38.185534977089475L245.2727157607672,36.8169603227777L229.28525732750504,63.95827887668577z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1092" d="M234.646390976431,67.30828698538944L252.03240601376086,41.04088359027364L249.80386537080392,39.59365237498815L232.87892770787897,66.16048291809405z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1097" d="M250.8125661159807,80.12143951289183L272.415844233193,57.196597646689696L271.2498097374138,56.10925288841861L249.88778013656955,79.25906263564235z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1098" d="M253.82903647016383,83.06508963563165L276.2192198971631,60.90815649710076L275.0918435028992,59.7807801028369L252.93491036436836,82.17096352983616z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1099" d="M256.74093736435765,86.11221986343047L279.8907471115814,64.75019026258624L278.8034023533103,63.58415576680699L255.8785604871082,85.18743388401933z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1100" d="M259.5447210958665,89.25911773748012L283.42595268609256,68.71801801682277L282.37996432590955,67.51474605294739L258.715144120549,88.3047985937169z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1101" d="M262.2369716861033,92.5019492474636L286.8205295172607,72.80680557288889L285.8171719308606,71.56776214245549L261.4412053244756,91.51925963022332z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1102" d="M264.8144090424333,95.83676350270582L290.07034183611154,77.0115713729769L289.1108374601579,75.7382660595455L264.0534228132287,94.8269006679154z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1103" d="M267.27389295446153,99.25949754572557L293.1714302469298,81.32719255765397L292.2569480897044,80.02117668761132L266.54861400217936,98.22369185569174z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1104" d="M269.6124269198957,102.76598130232315L296.12001655117285,85.74841120727702L295.2516707683192,84.41127595978445L268.92373888521865,101.7054947267256z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1105" d="M271.82716179532247,106.35194266217361L298.91250835062397,90.26984074795804L298.09135688771994,88.90321521634469L271.1759037385365,105.26806724054924z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1106" d="M273.91539926744986,110.01301268373493L301.5455034241759,94.88597251427448L300.77254672779037,93.49152172123816L273.30236464617855,108.9070689513268z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1107" d="M275.8745951405864,113.74473091713048L304.01579387291326,99.59118246072974L303.29197367171594,98.17060532976305L275.3005308430851,112.61806629601898z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1108" d="M277.7023624363517,117.54255083851999L306.3203700284434,104.37973801378607L305.64656818585354,102.93476529929995L277.16796787153896,116.39653799599651z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1109" d="M279.39647430184175,121.40184538933852L308.4564241197135,109.24580505612249L307.83346155948504,107.77819723478859L278.90240054717776,120.23788056552198z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1110" d="M280.95486672270647,125.3179126136547L310.4213536938473,114.1834550346081L309.8499893998998,112.69500016048904L280.501715730955,124.13741392038787z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1111" d="M282.37564103783296,129.28598138677958L312.21276478683285,119.18667218333078L311.6936948785467,117.6791837094118L281.96396490367493,128.09038707987833z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1112" d="M283.6570662525718,133.30121722814727L313.8284748401992,124.24936085288135L313.36233172430093,122.72467542165708L283.2873665399628,132.09198395510734z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1113" d="M284.79758114768714,137.35872819138473L315.26651536012724,129.36535293696335L314.85386696019975,127.82532814277198L284.4703082787791,136.13732921668122z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1114" d="M285.79579618146215,141.4535708243949L316.52513431575665,134.5284153872805L316.16648338031166,132.9749275131111L285.5113488878334,140.22149423453638z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1115" d="M286.6504951826415,145.58075619219156L317.6027982737654,139.73225780754586L317.2985817637218,138.16719953907668L286.40922001950355,144.339503082716z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1116" d="M287.36063683214854,149.7352559551483L318.4981942666221,144.97054011736088L318.2487828229364,143.39581823701326L287.16282775612194,148.48633860176915z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1117" d="M287.9253559317722,153.91200849525552L319.2102313922345,150.23688027662652L319.015928884332,148.6544133404444L287.77125394274606,152.65694851138693z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1118" d="M288.3439644582779,158.10592508292257L319.7380421430461,155.52486206107628L319.59908529860263,153.936578061261L288.2337573057883,156.84625156582769z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1119" d="M288.61595240165786,162.31189607681065L320.0809834629599,160.82804287945692L319.9975415794858,159.23587689540588L288.5497743561439,161.04914374463226z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1120" d="M288.74098838649957,166.5247971491439L320.23863753080377,166.13996162283362L320.2108122693808,164.54585346354403L288.7189200757158,165.26050447108665z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1121" d="M288.7189200757158,170.73949552891335L320.2108122693808,171.45414653645597L320.23863753080377,169.86003837716638L288.74098838649957,169.4752028508561z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1122" d="M288.5497743561439,174.95085625536774L319.9975415794858,176.76412310459412L320.0809834629599,175.17195712054308L288.61595240165786,173.68810392318935z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1123" d="M288.2337573057883,179.15374843417231L319.59908529860263,182.063421938739L319.7380421430461,180.47513793892372L288.3439644582779,177.89407491707743z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1124" d="M287.77125394274606,183.34305148861307L319.015928884332,187.3455866595556L319.2102313922345,185.76311972337348L287.9253559317722,182.08799150474448z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1125" d="M287.16282775612194,187.51366139823085L318.2487828229364,192.60418176298674L318.4981942666221,191.02945988263912L287.36063683214854,186.2647440448517z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1126" d="M286.40922001950355,191.660496917284L317.2985817637218,197.83280046092332L317.6027982737654,196.26774219245414L286.6504951826415,190.41924380780844z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1127" d="M285.5113488878334,195.77850576546362L316.16648338031166,203.0250724868889L316.52513431575665,201.4715846127195L285.79579618146215,194.5464291756051z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1128" d="M284.4703082787791,199.86267078331878L314.85386696019975,208.17467185722802L315.26651536012724,206.63464706303665L284.79758114768714,198.64127180861527z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1129" d="M283.28736653996276,203.90801604489266L313.36233172430093,213.27532457834292L313.8284748401992,211.75063914711865L283.6570662525718,202.69878277185273z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1130" d="M281.96396490367493,207.90961292012167L311.6936948785467,218.3208162905882L312.21276478683285,216.81332781666922L282.37564103783296,206.71401861322042z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1131" d="M280.501715730955,211.86258607961213L309.8499893998998,223.30499983951097L310.4213536938473,221.8165449653919L280.95486672270647,210.6820873863453z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1132" d="M278.90240054717776,215.76211943447802L307.83346155948504,228.2218027652114L308.4564241197135,226.7541949438775L279.39647430184175,214.59815461066148z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1133" d="M277.16796787153896,219.6034620040035L305.64656818585354,233.06523470070005L306.3203700284434,231.62026198621393L277.7023624363517,218.45744916148z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1134" d="M275.3005308430851,223.38193370398102L303.29197367171594,237.82939467023695L304.01579387291326,236.40881753927027L275.8745951405864,222.25526908286952z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1135" d="M273.30236464617855,227.0929310486732L300.77254672779037,242.50847827876186L301.5455034241759,241.1140274857255L273.91539926744986,225.98698731626507z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1136" d="M271.1759037385365,230.73193275945076L298.09135688771994,247.09678478365532L298.91250835062397,245.73015925204197L271.82716179532247,229.6480573378264z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1137" d="M268.92373888521865,234.2945052732744L295.2516707683192,251.58872404021554L296.12001655117285,250.251588792723L269.6124269198957,233.23401869767685z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1138" d="M266.54861400217936,237.77630814430825L292.2569480897044,255.97882331238867L293.1714302469298,254.67280744234603L267.27389295446153,236.74050245427443z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1139" d="M264.0534228132287,241.1730993320846L289.1108374601579,260.2617339404545L290.07034183611154,258.9884286270231L264.8144090424333,240.16323649729418z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1140" d="M261.4412053244756,244.4807403697767L285.8171719308606,264.4322378575445L286.8205295172607,263.1931944271111L262.2369716861033,243.49805075253641z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1141" d="M258.715144120549,247.6952014062831L282.37996432590955,268.4852539470526L283.42595268609256,267.2819819831772L259.5447210958665,246.74088226251988z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1142" d="M255.8785604871082,250.81256611598067L278.80340235331033,272.415844233193L279.8907471115814,271.2498097374138L256.74093736435765,249.88778013656952z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1143" d="M252.93491036436836,253.82903647016383L275.0918435028992,276.2192198971631L276.2192198971631,275.0918435028992L253.82903647016383,252.93491036436836z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1144" d="M249.88778013656955,256.74093736435765L271.2498097374138,279.8907471115814L272.415844233193,278.8034023533103L250.8125661159807,255.8785604871082z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1145" d="M246.74088226251985,259.5447210958665L267.2819819831772,283.42595268609256L268.4852539470526,282.37996432590955L247.6952014062831,258.715144120549z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1146" d="M243.49805075253641,262.2369716861033L263.19319442711117,286.8205295172607L264.4322378575445,285.8171719308606L244.4807403697767,261.4412053244756z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1147" d="M240.16323649729418,264.8144090424333L258.9884286270231,290.07034183611154L260.2617339404545,289.1108374601579L241.1730993320846,264.0534228132287z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1148" d="M236.74050245427446,267.27389295446153L254.67280744234603,293.17143024692973L255.9788233123887,292.2569480897044L237.77630814430827,266.5486140021793z" fill="rgba(255, 255, 255, 0.4)"></path><path id="SvgjsPath1150" d="M104.90829831054918,270.95629984575663L88.44959352199679,297.81446502291055L95.3525787504746,301.79990540278425L110.38307969865228,274.1171663539323z" fill="rgba(255, 255, 255, 0.90)"></path><path id="SvgjsPath1151" d="M238.11988190209598,69.69555115847446L256.4120250069906,44.0509123302504L254.23534957180578,42.526787782298115L236.39355310867356,68.4867627238916z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1152" d="M241.507942552803,72.20258415983335L260.6839275665777,47.21195394065944L258.5617692828917,45.612792971028654L239.82485150022447,70.934284080471z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1153" d="M244.80644509854,74.82633155593281L264.8429090372896,50.52015717921962L262.7778534280776,48.84790811921998L243.16864237399255,73.50006506007102z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1154" d="M248.0113708220503,77.56359671472799L268.883902340846,53.97149150987444L266.87846535827043,52.228191737395306L246.42085183586968,76.18097965379629z" fill="rgba(255, 255, 255, 0.60)"></path><path id="SvgjsPath1155" d="M242.61724673385078,86.8376380958536L271.0428645372225,55.918643084750215L265.0357628814188,50.679399839495076L238.26727656930325,83.04370333204817z" fill="rgba(255, 255, 255, 0.90)"></path><defs id="SvgjsDefs1001"></defs></svg></g>
+  </svg>
+
+  <div class="zilla-icons">
+    <div class="zilla-icon-gear" style="transform: scale(0.8, 0.8);"></div>
+    <div class="zilla-icon-leaf shown" style="transform: scale(0.8, 0.8);"></div>
+    <div class="zilla-icon-fan" style="transform: scale(0.8, 0.8);"></div>
+    <div class="zilla-icon-airwave" style="transform: scale(0.8, 0.8);"></div>
+    <div class="zilla-icon-sunblock" style="transform: scale(0.8, 0.8);"></div>
+  </div>
+  <div class="name" data-text="deckItemView:getDisplayName <
+                                              .name
+                                              .where_id" style="opacity: 1;"><span style="display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">Hallway  </span></div>
+  <div class="offline-label" data-show="deckItemView:isOffline < .online .target_temperature_type" style="display: none;">OFFLINE</div>
+</div>
+                        <a href=# class="button style2 down"></a>
+                        
+						<h3>I am Google Nest</h3>
+					</header>
+					<p>Say "hi"! I am you smart personal assistant who interfaces with Google Nest to fully control and automate your home. I can help you with daily tasks and also controls his website. How may I help you today? You can ask me to do things like "email Lawrence," "follow Lawrence on Twitter," "give me Lawrence's resume,"  "when is Lawrence free," "set up a meeting with Lawrence on Monday at 7 pm" or even to tell you a joke!</p>
+
+                        <!--<iframe src="http://onetune.fm/embed/playlist?url=/u/lawrence.murata/p/favorite-brazilian-songs" width="800" height="400" frameborder="0"></iframe>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</section>
+    </section>
+
+			<!--Hey there, if you're looking into the source code, you might as well be interested in checking out my resume at www.resume.lawrencemurata.com-->
+                			<!-- Footer -->
+			<footer id="dark_footer">
+			
+					<!--
+				     	Social Icons
+				     
+				     	From here: http://fortawesome.github.io/Font-Awesome/cheatsheet/
+					-->
+					<ul class="actions">
+						<li><a href="https://twitter.com/lawlm" class="fa solo fa-twitter" target="_blank"><span>Twitter</span></a></li>
+						<li><a href="https://www.facebook.com/lawrence.murata" class="fa solo fa-facebook" target="_blank"><span>Facebook</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/lawrencelm" class="fa solo fa-linkedin" target="_blank"><span>Linkedin</span></a></li>
+                        <li><a href="http://instagram.com/lawrence_lm" class="fa solo fa-instagram" target="_blank"><span>Instagram</span></a></li>
+                        <li><a href="https://medium.com/@lawlm" class="fa solo fa-pencil" target="_blank"><span>Blog</span></a></li>
+                        <li><a href="http://onetune.fm/u/lawrence.murata/p/lawrences-playlist" class="fa solo fa-music" target="_blank"><span>OneTune.fm</span></a></li>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                        <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://lawrencemurata.com/" data-via="LawLM">Tweet</a></li> <!--add data-size="large" for large icon-->
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <li><a href="https://twitter.com/LawLM" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false"><span>Follow @LawLM</span></a></li>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+					</ul>
+
+				<!-- Menu -->
+					<ul class="menu">
+						<li>&copy; <script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script> | built by Lawrence Lin Murata</li>
+                        <li><a href="mailto:lawrence@lawrencemurata.com?Subject=Hi!"> lawrence@lawrencemurata.com</li>
+						<li></a></li>
+					</ul>
+			</footer>
+
+		<script src="js/TweenLite.min.js"></script>
+    	<script src="js/rAF.js"></script>
+		<script src="js/EasePack.min.js"></script>
+
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/jquery-cookie/jquery.cookie.js"></script>
+        <script src="/bower_components/firebase/firebase.js"></script>
+        <!--<script src="/javascript/nest.js"></script>-->
+		
+        <script src="js/larryhouse_thermostat.js"></script>
+        <!--<script src="js/larryhouse_alarm.js"></script>-->
+        <script src="js/larrysecret.js"></script>
+
+        <script src="js/larryemotions.js"></script>
+        <script src="js/larrybody.js"></script>
+        <script src="js/larrybrain.js"></script>
+
+	</body>
+	
+	<!-- Google Analytics-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49247758-1', 'lawrencemurata.com');
+  ga('send', 'pageview');
+    </script>
+
+</html>

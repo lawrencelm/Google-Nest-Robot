@@ -18,7 +18,7 @@
 
 console.log("Nest Thermostat 2.0");
 
-var nestToken  = "c.wSNqNk9QzYdLjMe5valv3s1dH6BTwyhuvuwyU7hmbHIoewBXdr1pFYfi79pdiH2N6TZ8tCIOUW3lLYfIVnuKRkntlUsXXVN8SOGbjumAqxEHcy4921d9rmG38bWSbDBQuhRnDm1BSeTo6j4M",//'c.6RQuUon952UgSXo9p4v9Nbeo6pxmgfOHZhaGkXbkV7tKT2AltJP6tJcdQpGk7V1fQfhakoCMQEOHA4DAZnBrzFJr2Deb2yewygzUAJz1cLxG5V6nSpnK4Im3E1lv1CfPbwgZmmR6XORSsL6c',
+var nestToken  = "c.nJzAgcplGmn9bmxZvjAb43OpSbOkLFm5ep2YRnQU2dNDO0iuRe8PxOjT9Ax2wuy4ud0hcrUDe1vzK5jyK1D0XB5BN49bTfJReL8elhDXW21rCwM8GBIBZhr6a3aTqCaJ35XxcQPNOf7yDLY1",//"c.wSNqNk9QzYdLjMe5valv3s1dH6BTwyhuvuwyU7hmbHIoewBXdr1pFYfi79pdiH2N6TZ8tCIOUW3lLYfIVnuKRkntlUsXXVN8SOGbjumAqxEHcy4921d9rmG38bWSbDBQuhRnDm1BSeTo6j4M",//'c.6RQuUon952UgSXo9p4v9Nbeo6pxmgfOHZhaGkXbkV7tKT2AltJP6tJcdQpGk7V1fQfhakoCMQEOHA4DAZnBrzFJr2Deb2yewygzUAJz1cLxG5V6nSpnK4Im3E1lv1CfPbwgZmmR6XORSsL6c',
 //$.cookie('nest_token'),
     thermostat = {},
     structure  = {};
