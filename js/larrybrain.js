@@ -344,7 +344,7 @@
     function showTemperature(ambient, target, show) {
               annyang.pause();
 
-              var speechLog = "Here are Lawrence's favorite Brazilian songs. I hope you enjoy!";
+              var speechLog = "Here are the target temperature and the ambient temperature, respectively.";
 
               responsiveVoice.speak(speechLog, 'UK English Male');
 
@@ -375,6 +375,177 @@
               emotions(speechLog);     
     }
 
+    function useTV() {
+              console.log("using TV");
+              annyang.pause();
+
+              var speechLog = "Okay, my master. I am turning the TV on.";
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);    
+    }
+
+    function useLights() {
+              console.log("using lights");
+              annyang.pause();
+
+              var speechLog = "Yes, my lord. I am turning the lights on.";
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);   
+    }
+
+    function useDoors() {
+              console.log("using doors");
+
+              annyang.pause();
+
+              var speechLog = "Okay, your highness. I am opening the door.";
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);   
+    }
+
+    function useChannel() {
+             console.log("using channel");
+
+              annyang.pause();
+
+              var speechLog = "Okay, your highness. I am opening the door.";
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);   
+    }
+
+    function useMusic() {
+              console.log("using msuic");
+
+              annyang.pause();
+
+              var speechLog = "Okay, supreme lord. I am going to turn the radio on.";
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);
+    }
+
+    function keywordApproach(command) {
+
+        temperature = false;
+        increase = false;
+        decrease = false;
+        tv = false;
+        on = false;
+        lights = false;
+        channel = false;
+        doors = false;
+        show = false;
+        hide = false;
+        playlist = false;
+        music = false;
+
+        arrayWords = command.split(" ");
+        for(var i = 0; i < arrayWords.length ; i++) {
+                //for (word of command.split(" ")) {
+            word = arrayWords[i];
+            console.log(word);
+            console.log(command.split(" "));
+            if(word == "temperature") {
+              temperature = true;
+            } else if (word == "increase" || word == "increased") {
+              increase = true;
+            } else if (word == "decrease" || word == "decreased") {
+              decrease = true;
+            } else if (word == "TV" || word == "television") {
+              tv = true;
+            } else if (word == "on") {
+              on = true;
+            } else if (word == "lights" || word == "light") {
+              lights = true;
+            } else if (word == "channel" || word == "channels") {
+              channel = true;
+            } else if (word == "door" || word == "doors") {
+              lights = true;
+            } else if (word == "show") {
+              show = true;
+            } else if (word == "hide") {
+              hide = true;
+            } else if (word == "music") {
+              music = true;
+            } else if (word == "playlist") {
+              playlist = true;
+            }
+        }
+
+        if(temperature || increase || decrease) {
+          if(decrease) {
+              decreaseTemperature();
+          } else if (show) {
+              showTemperature(true, true, true);
+          } else if (hide) {
+              showTemperature(true, true, false);
+          } else {
+              increaseTemperature();
+          }
+        } else if(tv) {
+              useTV();
+        } else if(lights) {
+              useLights();
+        } else if(doors) {
+              useDoors();
+        } else if (channel) {
+              useChannel();
+        } else if (music) {
+              useMusic();
+        } else if (playlist) {
+              if(show) {
+                showPlaylist(true);
+              } else {
+                showPlaylist(false);
+              }
+        }
+
+        if(temperature || tv || doors || lights || channel || music || playlist) {
+          console.log("recognized something");
+          return true;
+        }
+        return false;
+    }
+
     if (annyang) {
       console.log("there is annyang");
 
@@ -397,14 +568,33 @@
                 temperature();
             },*/
 
-            'Turn (the) TV ON': function() {
-        //TV ON/OFF
-        //lights
-        //channel
-        //music
-        //door
+            'Turn (the) TV on': function() {
+                useTV();
             },
 
+            'Turn (the) lights on': function() {
+                useLights();
+            },
+
+            'Open (the) door': function() {
+                useDoors();
+            },
+
+            'Change (the) channel': function() {
+                useChannel();
+            },
+
+            'Play (the) music': function() {
+                useMusic();
+            },
+
+            'Show playlist': function(number) {
+                showPlaylist(true);
+            },
+
+            'Hide playlist': function(number) {
+                showPlaylist(false);
+            },
 
             'Show temperature': function(number) {
                 showTemperature(true, true, true);
@@ -454,7 +644,7 @@
                 temperature((-1)*(parseInt(number)));
             },
 
-            'Increase *anything': function(number) {
+        /*    'Increase *anything': function(number) {
                 increaseTemperature();
             },
 
@@ -469,7 +659,7 @@
             'Decreased *anything': function(number) {
                 decreaseTemperature();
             }, 
-
+*/
             '(Larry) (Bot) (set up a) meeting (with Lawrence) (on) *date (at) *time':function(date, time) {
               setUpMeeting1(date, time);
             },
@@ -631,8 +821,9 @@
           },
 
         '*anything': function(command) {
-              anyCommand(command);
-              showPlaylist();
+              if(keywordApproach(command) == false) {
+                anyCommand(command);
+              }
          }
 
       };
