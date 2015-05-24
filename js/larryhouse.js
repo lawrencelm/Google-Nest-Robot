@@ -82,10 +82,12 @@ function updateTemperatureDisplay (thermostat) {
 
   // Otherwise just display the target temperature
   } else {
+    console.log(thermostat['target_temperature_' + scale] + '°');
     $('#target-temperature .temp').text(thermostat['target_temperature_' + scale] + '°');
   }
 
   // Update ambient temperature display
+  console.log(thermostat['ambient_temperature_' + scale] + '°');
   $('#ambient-temperature .temp').text(thermostat['ambient_temperature_' + scale] + '°');
 }
 

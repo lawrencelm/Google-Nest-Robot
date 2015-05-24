@@ -1,6 +1,6 @@
 //Hi! This is Larry Bot's brain
 
-    console.log("Welcome to Larry Brain 1.0");
+    console.log("Welcome to Larry Brain 1.1");
 
     function sleep(miliseconds) {
              var currentTime = new Date().getTime();
@@ -258,21 +258,81 @@
               window.setTimeout("afterSpeech()", timing); //time it according to size of string
     }
 
-    function temperature() {
-             annyang.pause();
+    function temperature(number) {
+              annyang.pause();
 
               var speechLog = 'Yes, master. I am changing the temperature for you. Hold on... How do you like it now?';
 
-              //responsiveVoice.speak(speechLog, 'UK English Male');
+              responsiveVoice.speak(speechLog, 'UK English Male');
 
               console.log(speechLog);
 
               var timing = getTiming(speechLog);
 
+              adjustTemperature(parseInt(number),'F','');
+
+
               window.setTimeout("afterSpeech()", timing); //time it according to size of string 
 
               emotions(speechLog);
      
+    }
+
+    function increaseTemperature() {
+              annyang.pause();
+
+              var speechLog = 'Yes, master. I am changing the temperature for you. Hold on... How do you like it now?';
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              increaseOne();
+
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);
+    }
+
+    function decreaseTemperature() {
+              annyang.pause();
+
+              var speechLog = 'Yes, master. I am changing the temperature for you. Hold on... How do you like it now?';
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              decreaseOne();
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);
+    }
+
+    $("#onetune").hide();
+
+    function showPlaylist() {
+              annyang.pause();
+
+              var speechLog = "Here is Lawrence's favorite playlist";
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              decreaseOne();
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);     
     }
 
     if (annyang) {
@@ -290,52 +350,60 @@
       // Let's define our first command. First the text we expect, and then the function it should call
       var commands = {
             //Hello. Welcome to Lawrence's website. I am Larry Bot, Lawrence's smart personal assistant. I am still under construction, so I am afraid I won't be very helpful for now. Once I am ready for the outside world, I will be a smart robot that will help you find information and do any tasks you need.
-            '*anything' : function() {
+           /* '*anything' : function() {
               console.log("tempreature");
               //increaseOne();
                 adjustTemperature(10,'F','');
                 temperature();
+            },*/
+
+            'Turn (the) TV ON': function() {
+        //TV ON/OFF
+        //lights
+        //channel
+        //music
+        //door
             },
 
-         /*   'Increase temperature': function(number) {
-                increaseOne();
+            'Increase temperature': function(number) {
+                increaseTemperature();
             },
 
             'Decrease temperature': function(number) {
-                decreaseOne();
+                decreaseTemperature();
             },
 
             'Increase temperature by *number': function(number) {
-                adjustTemperature(parseInt(number),'F','');
+                temperature(parseInt(number));
             },
 
             'Decrease temperature by *number': function(number) {
-                adjustTemperature((-1)*(parseInt(number)),'F','');
+                temperature((-1)*(parseInt(number)));
             },
 
             'Increased temperature by *number': function(number) {
-                adjustTemperature(parseInt(number),'F','');
+                temperature(parseInt(number));
             },
 
             'Decreased temperature by *number': function(number) {
-                adjustTemperature((-1)*(parseInt(number)),'F','');
+                temperature((-1)*(parseInt(number)));
             },
 
             'Increase *anything': function(number) {
-                increaseOne();
+                increaseTemperature();
             },
 
             'Decrease *anything': function(number) {
-                decreaseOne();
+                decreaseTemperature();
             },
 
             'Increased *anything': function(number) {
-                increaseOne();
+                increaseTemperature();
             },
 
             'Decreased *anything': function(number) {
-                decreaseOne();
-            }, */
+                decreaseTemperature();
+            }, 
 
             '(Larry) (Bot) (set up a) meeting (with Lawrence) (on) *date (at) *time':function(date, time) {
               setUpMeeting1(date, time);
@@ -495,11 +563,11 @@
            //implement question-answering NLP here
             //also use Parse for backend so I can store all the data and learn on that data
             //temporary solution for "listening to himself" bug
-          }/*,
+          },
 
         '*anything': function(command) {
               anyCommand(command);
-         }*/
+         }
 
       };
 
