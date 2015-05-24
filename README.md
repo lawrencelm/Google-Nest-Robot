@@ -2,4 +2,4 @@
 Automated home using Google Nest
 
 New features:
-** Test
+* Test
