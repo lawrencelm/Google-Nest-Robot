@@ -16,9 +16,9 @@
 /* globals $, Firebase */
 'use strict';
 
-console.log("THERMOSTAT");
+console.log("Nest Thermostat 2.0");
 
-var nestToken  = 'c.6RQuUon952UgSXo9p4v9Nbeo6pxmgfOHZhaGkXbkV7tKT2AltJP6tJcdQpGk7V1fQfhakoCMQEOHA4DAZnBrzFJr2Deb2yewygzUAJz1cLxG5V6nSpnK4Im3E1lv1CfPbwgZmmR6XORSsL6c',
+var nestToken  = "c.wSNqNk9QzYdLjMe5valv3s1dH6BTwyhuvuwyU7hmbHIoewBXdr1pFYfi79pdiH2N6TZ8tCIOUW3lLYfIVnuKRkntlUsXXVN8SOGbjumAqxEHcy4921d9rmG38bWSbDBQuhRnDm1BSeTo6j4M",//'c.6RQuUon952UgSXo9p4v9Nbeo6pxmgfOHZhaGkXbkV7tKT2AltJP6tJcdQpGk7V1fQfhakoCMQEOHA4DAZnBrzFJr2Deb2yewygzUAJz1cLxG5V6nSpnK4Im3E1lv1CfPbwgZmmR6XORSsL6c',
 //$.cookie('nest_token'),
     thermostat = {},
     structure  = {};
@@ -170,6 +170,18 @@ $('#up-button').on('click', function () {
       adjustment = scale === 'F' ? +1 : +0.5;
   adjustTemperature(adjustment, scale);
 });
+
+function increaseOne() {
+  var scale = thermostat.temperature_scale,
+      adjustment = scale === 'F' ? +1 : +0.5;
+  adjustTemperature(adjustment, scale);
+}
+
+function decreaseOne() {
+  var scale = thermostat.temperature_scale,
+      adjustment = scale === 'F' ? -1 : -0.5;
+  adjustTemperature(adjustment, scale);
+}
 
 /**
   When the user clicks the down button,
