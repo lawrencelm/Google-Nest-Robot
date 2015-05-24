@@ -90,12 +90,12 @@
 
     function playSongCube() {
       var audioName = "dying.wav";
-      /*if(howImFeeling < 0) {
+      if(howImFeeling < 0) {
         //4, 3, 2, 1, 0
         //-0.2, -0.4, -0.6, -0.8, -1
-        if(howImFeeling > -0.35) {
+        if(howImFeeling > -0.2) {
           audioName = "med_blink.wav";
-        } else if(howImFeeling > -0.7) {
+        } else if(howImFeeling > -0.5) {
           audioName = "small_blink.wav";
         } else {
           audioName = "dying.wav";
@@ -104,7 +104,7 @@
       if(howImFeeling > 0) {
         //6, 7, 8, 9, 10
         //0.2, 0.4, 0.6, 0.8, 1
-        if(howImFeeling < 0.5) {
+        if(howImFeeling < 0.3) {
           audioName = "large_blink.wav";
         } else {
           audioName = "happy.wav";
@@ -113,7 +113,7 @@
       if(howImFeeling == 0) {
         //neutral
         bodyStress = "med_blink.wav";
-      }*/
+      }
 
       var audio = new Audio(audioName);
       audio.volume = 1.0;
