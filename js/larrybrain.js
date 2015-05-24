@@ -316,11 +316,13 @@
     }
 
     $("#onetune").hide();
+    $("#ambient-temperature").hide();
+    $("#target-temperature").hide();
 
-    function showPlaylist() {
+    function showPlaylist(show) {
               annyang.pause();
 
-              var speechLog = "Here is Lawrence's favorite playlist";
+              var speechLog = "Here are Lawrence's favorite Brazilian songs. I hope you enjoy!";
 
               responsiveVoice.speak(speechLog, 'UK English Male');
 
@@ -328,7 +330,45 @@
 
               var timing = getTiming(speechLog);
 
-              decreaseOne();
+              if(show) {
+                $("#onetune").show();
+              } else {
+                $("#onetune").hide();
+              }
+
+              window.setTimeout("afterSpeech()", timing); //time it according to size of string 
+
+              emotions(speechLog);     
+    }
+
+    function showTemperature(ambient, target, show) {
+              annyang.pause();
+
+              var speechLog = "Here are Lawrence's favorite Brazilian songs. I hope you enjoy!";
+
+              responsiveVoice.speak(speechLog, 'UK English Male');
+
+              console.log(speechLog);
+
+              var timing = getTiming(speechLog);
+
+              if(show) {
+                if(ambient) {
+                  $("#ambient-temperature").show();
+                }
+                if(target){
+                  $("#target-temperature").show();
+                }
+              } else {
+                if(ambient) {
+                  $("#ambient-temperature").hide();
+                }
+                if(target){
+                  $("#target-temperature").hide();
+                }
+              }
+
+              //decreaseOne();
 
               window.setTimeout("afterSpeech()", timing); //time it according to size of string 
 
@@ -363,6 +403,31 @@
         //channel
         //music
         //door
+            },
+
+
+            'Show temperature': function(number) {
+                showTemperature(true, true, true);
+            },
+
+            'Show ambient temperature': function(number) {
+                showTemperature(true, false, true);
+            },
+
+            'Show target temperature': function(number) {
+                showTemperature(false, true, true);
+            },
+
+            'Hide temperature': function(number) {
+                showTemperature(true, true, false);
+            },
+
+            'Hide ambient temperature': function(number) {
+                showTemperature(true, false, false);
+            },
+
+            'Hide target temperature': function(number) {
+                showTemperature(false, true, false);
             },
 
             'Increase temperature': function(number) {
@@ -567,6 +632,7 @@
 
         '*anything': function(command) {
               anyCommand(command);
+              showPlaylist();
          }
 
       };

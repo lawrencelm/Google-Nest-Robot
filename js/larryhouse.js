@@ -40,6 +40,24 @@ var nestToken  = "c.nJzAgcplGmn9bmxZvjAb43OpSbOkLFm5ep2YRnQU2dNDO0iuRe8PxOjT9Ax2
   window.location.replace('/auth/nest');
 }*/
 
+function turnTVONOFF() {
+
+}
+
+function changeChannel() {
+
+}
+
+function playMusic() {
+
+}
+
+function openCloseDoor() {
+
+}
+
+function controlLights() {}
+
 /**
   The appropriate version of target temperature to display is based on
   the following parameters:
@@ -83,12 +101,16 @@ function updateTemperatureDisplay (thermostat) {
   // Otherwise just display the target temperature
   } else {
     console.log(thermostat['target_temperature_' + scale] + '°');
-    $('#target-temperature .temp').text(thermostat['target_temperature_' + scale] + '°');
+    $('#target-temperature').text(thermostat['target_temperature_' + scale] + '°');
+
+   // $('#target-temperature .temp').text(thermostat['target_temperature_' + scale] + '°');
   }
 
   // Update ambient temperature display
   console.log(thermostat['ambient_temperature_' + scale] + '°');
-  $('#ambient-temperature .temp').text(thermostat['ambient_temperature_' + scale] + '°');
+  $('#ambient-temperature').text(thermostat['ambient_temperature_' + scale] + '°');
+
+  //$('#ambient-temperature .temp').text(thermostat['ambient_temperature_' + scale] + '°');
 }
 
 /**
