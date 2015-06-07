@@ -44,6 +44,22 @@
               return timing;
     }
 
+    var levenshteinThreshold = 3;
+
+    //returns -1 if levenshtein distance if outside of desired threshold
+    function levenshteinDistance (s, t) {
+      if (!s.length) return t.length;
+      if (!t.length) return s.length;
+
+      if (s.length > levenshteinThreshold || t.length > levenshteinThreshold) return -1; //
+
+      return Math.min(
+        levenshteinDistance(s.substr(1), t) + 1,
+        levenshteinDistance(t.substr(1), s) + 1,
+        levenshteinDistance(s.substr(1), t.substr(1)) + (s[0] !== t[0] ? 1 : 0)
+      ) + 1;
+    }
+
     function afterSpeech() { //when bot is done speaking, resume hearing and reset body
       annyang.resume();
       resetBody();
@@ -465,6 +481,10 @@
 
     function keywordApproach(command) {
 
+        //improvements: use data structures since I have so many variables. Stop being lazy! Write my own algorithm for this
+        //possible extension: get all the variables from database and make it really easy to add new capabilities into Larry Bot's speech recognition
+        //make functions have same name as variable for easier use too
+
         temperature = false;
         increase = false;
         decrease = false;
@@ -477,16 +497,21 @@
         hide = false;
         playlist = false;
         music = false;
+        num = -1;
+        //use isNaN(num) to get value for temperature     // returns true if the variable does NOT contain a valid number
 
         arrayWords = command.split(" ");
         for(var i = 0; i < arrayWords.length ; i++) {
                 //for (word of command.split(" ")) {
             word = arrayWords[i];
             console.log(word);
-            console.log(command.split(" "));
-            if(word == "temperature") {
+            //console.log(command.split(" "));
+            console.log(levenshteinDistance(word, "increase"));
+            if(!isNaN(word)) {
+              num = parseInt(word);
+            } else if(word == "temperature") {
               temperature = true;
-            } else if (word == "increase" || word == "increased") {
+            } else if (word == "increase" || word == "increased") {//} || levenshteinDistance(word, "increase") <= levenshteinThreshold) {
               increase = true;
             } else if (word == "decrease" || word == "decreased") {
               decrease = true;
@@ -512,6 +537,7 @@
         }
 
         if(temperature || increase || decrease) {
+          console.log("calling temperature function " + temperature + " " + increase + " " + decrease)
           if(decrease) {
               decreaseTemperature();
           } else if (show) {
@@ -519,6 +545,7 @@
           } else if (hide) {
               showTemperature(true, true, false);
           } else {
+              console.log("increasinggg");
               increaseTemperature();
           }
         } else if(tv) {

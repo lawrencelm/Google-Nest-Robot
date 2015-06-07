@@ -31,7 +31,7 @@
         howImFeeling = parseFloat(entry.docSentiment.score);
 
         expressEmotions();
-        playSongCube();
+        //playSongCube(); //disabling sound for a while
         //callback(null, entry);
       //}
       });
@@ -42,11 +42,11 @@
       console.log(request.statusText);
       console.log(request.responseText);
 
-    /*  var piece = Parse.Object.extend("MemoryPiece"); //piece of memory
+      var MemoryPiece = Parse.Object.extend("MemoryPiece"); //piece of memory
       var piece = new MemoryPiece();
       piece.save({response: text, userQuery: ""}).then(function(object) { //how to I also save the user query???
         console.log("yay! it worked");
-      });*/
+      });
     }
 
     function expressEmotions() {
